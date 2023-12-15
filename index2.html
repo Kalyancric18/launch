@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAM vX Opening Ceremony</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url('bg1.jpg');
+            /* filter: blur(5px); */
+            background-size: cover;
+            background-color: #2c2a2aa1;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1 {
+            color: #fdfeff;
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        #launchButton {
+            background-color: #3498db8a;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 64px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        #launchButton:hover {
+            background-color: #2980b9;
+            background-color: #eb846a;
+        }
+
+        #countdown {
+            color: #fff;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TAM vX Opening Ceremony</h1>
+    <br>
+    <br>
+    <!-- <p>Click to launch and welcome to our event!<br>
+    TAM stands for Technology Awareness Month, where we conduct events on generating awareness amongst students about the latest practical technologies in the industry of engineering. TAM stands to be a knowledge-parting legacy from years! We are more than proud to introduce version 10 of TAM for the year 2023-24. Come and join us to be a part of the biggest intelligence-rave of St. Martin’s Engineering College.</p> -->
+
+    <button id="launchButton" onclick="launch()">LAUNCH</button>
+
+    <div id="countdown"></div>
+
+    <script>
+
+        function launch() {
+            // Hide the launch button
+            document.getElementById('launchButton').style.display = 'none';
+
+            // Display countdown
+            var countdownElement = document.getElementById('countdown');
+            var count = 3;
+
+            function updateCountdown() {
+                countdownElement.textContent = 'Launching in ' + count + '...';
+                count--;
+
+                if (count < 0) {
+                    // Redirect to "smecram.website" after countdown
+                    window.location.href = 'https://smectam.website';
+                } else {
+                    setTimeout(updateCountdown, 1000);
+                }
+            }
+
+            updateCountdown();
+
+        }
+
+
+    </script>
+</body>
+</html>
